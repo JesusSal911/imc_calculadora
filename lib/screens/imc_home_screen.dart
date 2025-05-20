@@ -12,8 +12,21 @@ class ImcHomeScreen extends StatefulWidget {
 }
 
 class _ImcHomeScreenState extends State<ImcHomeScreen> {
+  double selectedHeight = 160;
   @override
   Widget build(BuildContext context) {
-    return Column(children: [GenderSelector(), HeightSelector()]);
+    return Column(
+      children: [
+        GenderSelector(),
+        HeightSelector(
+          selectedWeight: selectedHeight,
+          onHeightChange: (newheight) {
+            setState(() {
+              selectedHeight = newheight;
+            });
+          },
+        ),
+      ],
+    );
   }
 }
