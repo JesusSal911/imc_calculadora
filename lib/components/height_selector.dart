@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:imc_calculadora/core/app_colors.dart';
+import 'package:imc_calculadora/core/text_styles.dart';
+
+class HeightSelector extends StatefulWidget {
+  const HeightSelector({super.key});
+
+  @override
+  State<HeightSelector> createState() => _HeightSelectorState();
+}
+
+class _HeightSelectorState extends State<HeightSelector> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
