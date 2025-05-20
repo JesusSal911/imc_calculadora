@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imc_calculadora/components/gender_selector.dart';
 import 'package:imc_calculadora/components/height_selector.dart';
+import 'package:imc_calculadora/components/number_selector.dart';
 import 'package:imc_calculadora/core/app_colors.dart';
 import 'package:imc_calculadora/core/text_styles.dart';
 
@@ -12,6 +13,8 @@ class ImcHomeScreen extends StatefulWidget {
 }
 
 class _ImcHomeScreenState extends State<ImcHomeScreen> {
+  int selectedAge = 20;
+  int selectedWeight = 80;
   double selectedHeight = 160;
   @override
   Widget build(BuildContext context) {
@@ -25,6 +28,46 @@ class _ImcHomeScreenState extends State<ImcHomeScreen> {
               selectedHeight = newheight;
             });
           },
+        ),
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Expanded(
+                child: NumberSelector(
+                  title: "PESO",
+                  value: selectedWeight,
+                  onDecrement: () {
+                    setState(() {
+                      selectedWeight--;
+                    });
+                  },
+                  onIncrement: () {
+                    setState(() {
+                      selectedWeight++;
+                    });
+                  },
+                ),
+              ),
+              SizedBox(width: 16), // Espacio entre los selectores
+              Expanded(
+                child: NumberSelector(
+                  title: "EDAD",
+                  value: selectedAge,
+                  onDecrement: () {
+                    setState(() {
+                      selectedAge--;
+                    });
+                  },
+                  onIncrement: () {
+                    setState(() {
+                      selectedAge++;
+                    });
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
