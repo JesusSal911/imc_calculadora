@@ -11,6 +11,10 @@ class ImcResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      appBar: toolbarResult(),
+      body: bodyResult(context),
+    );
   }
 }
