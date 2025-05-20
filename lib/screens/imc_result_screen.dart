@@ -103,4 +103,39 @@ class ImcResultScreen extends StatelessWidget {
       ),
     );
   }
+
+  AppBar toolbarResult() {
+    return AppBar(
+      backgroundColor: AppColors.primary,
+      foregroundColor: Colors.white,
+      title: Text("Resultado IMC"),
+    );
+  }
+
+  Color getColorByImc(double imcResult) {
+    return switch (imcResult) {
+      < 18.5 => Colors.blue, // IMC Bajo
+      < 24.9 => Colors.green, // IMC Normal
+      < 29.9 => Colors.orange, // IMC Sobrepeso
+      _ => Colors.red, // IMC Obesidad
+    };
+  }
+
+  String getTitleByImc(double imcResult) {
+    return switch (imcResult) {
+      < 18.5 => "Bajo peso",
+      < 24.9 => "Normal",
+      < 29.9 => "Sobrepeso",
+      _ => "Obesidad",
+    };
+  }
+
+  String getDescriptionByImc(double imcResult) {
+    return switch (imcResult) {
+      < 18.5 => "Tu peso está por debajo de lo recomendado.",
+      < 24.9 => "Tu peso esta dentro de lo recomendado.",
+      < 29.9 => "Tienes sobrepeso, cuidad tu alimentación.",
+      _ => "Tienes obesidad, es importante que busques ayuda médica.",
+    };
+  }
 }
