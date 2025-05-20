@@ -1,6 +1,7 @@
 # 🏋️‍♂️ Calculadora de IMC - Flutter
 
-![App Preview](assets/images/preview.png) <!-- Añade tu imagen de preview aquí -->
+![image](https://github.com/user-attachments/assets/ade91db3-aa6d-4559-af8e-2110c4807e05)
+
 
 Una aplicación móvil para calcular el Índice de Masa Corporal (IMC) con interfaz intuitiva y resultados detallados según estándares de la OMS.
 
